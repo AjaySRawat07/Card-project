@@ -1,73 +1,54 @@
-const fn = document.querySelector(".firstname");
-const ln = document.querySelector(".lastname");
-const cnt = document.querySelector(".country");
-const ph = document.querySelector(".phonenumber");
-const st = document.querySelector(".state");
-const cty = document.querySelector(".city");
-const vg = document.querySelector(".village");
+const btn = document.querySelector("#submit");
+const clearBtn = document.querySelector("#clear");
+let firstName;
+let lastName;
+let country;
+let number;
+let state;
+let city;
+let village;
 
+let userInfo = JSON.parse(localStorage.getItem('userInfo'));
 
+if(!userInfo){
+    btn.addEventListener("click",()=>{
+        firstName = document.querySelector('#firstname').value;
+        lastName = document.querySelector("#lastname").value;
+        country = document.querySelector("#country").value;
+        number = document.querySelector("#number").value;
+        state = document.querySelector("#state").value;
+        city = document.querySelector("#city").value;
+        village = document.querySelector("#village").value;
 
-function userinfo(){
-
-
-    const f_n = prompt("enter your First name");
-    const l_n = prompt("enter your Last name");
-    const c_nt = prompt("enter your country");
-    const ph_num = prompt("enter your Phone-number");
-    const s_ty = prompt("enter your State");
-    const c_ty = prompt("enter your City");
-    const v_g = prompt("enter your Village");
-
-    const userinformation ={
-        f_n, 
-        l_n,
-        c_nt,
-        ph_num,
-        s_ty,
-        c_ty,
-        v_g
-    };
-
-    
-
-    fn.innerText = f_n;
-    ln.innerText = l_n;
-    cnt.innerText = c_nt;
-    ph.innerText = ph_num;
-    st.innerText = s_ty;
-    cty.innerText = c_ty;
-    vg.innerText = v_g;
-
-    let convert = JSON.stringify(userinformation);
-    localStorage.setItem("user", convert);
-    // console.log(userinformation);
-
-    let after = JSON.parse(localStorage.getItem("user"));
-    console.log(after);
-}
-
-
-if(localStorage.length == 0){
-    userinfo();
-}
-else {
-    let after = JSON.parse(localStorage.getItem("user"));
-    // console.log(after);
-
-    fn.innerText = after.f_n;
-    ln.innerText = after.l_n;
-    cnt.innerText = after.c_nt;
-    ph.innerText = after.ph_num;
-    st.innerText = after.s_ty;
-    cty.innerText = after.c_ty;
-    vg.innerText = after.v_g;
-
+        userInfo = {
+            firstName : firstName,
+            lastName  : lastName,
+            country : country,
+            number : number,
+            state : state,
+            city : city,
+            village : village,
+        }
+    localStorage.setItem("userInfo",JSON.stringify(userInfo));
+    })
 
 }
-
-function myFunction() {
-    var element = document.body;
-    element.classList.toggle("dark-mode");
-
+else{
+        document.querySelector('#firstname').value = userInfo.firstName;
+        document.querySelector("#lastname").value = userInfo.lastName;
+        document.querySelector("#country").value = userInfo.country;
+        document.querySelector("#number").value = userInfo.number;
+        document.querySelector("#state").value = userInfo.state;
+        document.querySelector("#city").value = userInfo.city;
+        document.querySelector("#village").value = userInfo.village;
 }
+
+clearBtn.addEventListener("click",()=>{
+    localStorage.clear();
+    window.location.assign('https://ajaysrawat07.github.io/Card-project/');
+})
+
+
+
+
+

@@ -4,46 +4,47 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UserInfo</title>
-    <link rel="stylesheet" href="./style.css">
-    <script src="./script.js" defer></script>
+    <!-- <link rel="stylesheet" href="./style.css"> -->
+    
 </head>
-<body>
-    <div class="cont">
-        <div class="info">
-            <h1>User Information Card</h1>
-            <div class="userInfo">
-                <div class="details">
-                    <span class="row">First Name :</span>
-                    <span id="ans" class="firstname"></span>
-                </div>
-                <div class="details">
-                    <span class="row">Last Name :</span>
-                    <span id="ans" class="lastname"></span>
-                </div>
-                <div class="details">
-                    <span class="row">Country :</span>
-                    <span id="ans" class="country"></span>
-                </div>
-                <div class="details">
-                    <span class="row">Phone number :</span>
-                    <span id="ans" class="phonenumber"></span>
-                </div>
-                <div class="details">
-                    <span class="row">State:</span>
-                    <span id="ans" class="state"></span>
-                </div>
-                <div class="details">
-                    <span class="row">City :</span>
-                    <span id="ans" class="city"></span>
-                </div>
-                <div class="details">
-                    <span class="row">Village :</span>
-                    <span id="ans" class="village"></span>
-                </div>
-            </div>
-        </div>
-        <button onclick="myFunction()">Click</button>
+<body
+class="font-mono w-full min-h-screen flex items-center justify-center gap-10 bg-gradient-to-tr to-teal-500 from-cyan-700">
+<div class="flex w-1/2 flex-col gap-6 justify-center shadow-lg p-4 items-center" id="theekha">
+    <div class="flex justify-between w-full">
+        <label for="firstname" >First Name :</label>
+        <input type="text" id="firstname"/>
+    </div>
+    <div class="flex justify-between w-full">
+        <label for="lastname">Last Name :</label>
+        <input type="text" id="lastname">
+    </div>
+    <div class="flex justify-between w-full">
+        <label for="country">Country :</label>
+    <input type="text" id="country">
+    </div>
+    <div class="flex justify-between w-full">
+        <label for="number">Number :</label>
+        <input type="text" id="number">
+    </div>
+    <div class="flex justify-between w-full">
+        <label for="state">State :</label>
+        <input type="text" id="state">
     </div>
     
+    <div class="flex justify-between w-full">
+        <label for="city">City :</label>
+        <input type="text" id="city">
+    </div>
+    <div class="flex justify-between w-full">
+        <label for="village">Village</label>
+        <input type="text" id="village">
+    </div>
+    <div class=" flex justify-between w-1/2 ">
+        <button class="px-3 py-1 border-2 border-black rounded-md" id="submit">Submit</button>
+    <button class="px-3 py-1 border-2 border-black rounded-md" id="clear">Clear</button>
+    </div>
+</div>
+<script src="https://cdn.tailwindcss.com" ></script>
+    <script src="./script.js" ></script>
 </body>
 </html>
